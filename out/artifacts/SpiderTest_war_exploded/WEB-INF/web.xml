@@ -4,11 +4,20 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>SpiderServlet</servlet-name>
-        <servlet-class>org.example.SpiderServlet</servlet-class>
+        <servlet-name>CrawlerServlet</servlet-name>
+        <servlet-class>org.example.CrawlerServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-    <servlet-name>SpiderServlet</servlet-name>
-    <url-pattern>/spider_servlet</url-pattern>
+        <servlet-name>CrawlerServlet</servlet-name>
+        <url-pattern>/Crawler</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreatePdfServlet</servlet-name>
+        <servlet-class>org.example.CreatePdfServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreatePdfServlet</servlet-name>
+        <url-pattern>/CreatePdf</url-pattern>
     </servlet-mapping>
 </web-app>
