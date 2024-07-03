@@ -20,9 +20,13 @@
             if(cnt>0)writer.print("请重新输入url");
             cnt++;
         }
-        else{
-            request.setAttribute("url", url);
 
+        else{
+
+            PrintWriter writer=response.getWriter();
+            writer.write("跳转");
+
+            request.setAttribute("url", url);
             request.getRequestDispatcher("Main.jsp").forward(request,response);
             cnt=0;
         }
