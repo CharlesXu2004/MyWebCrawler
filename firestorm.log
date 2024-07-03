@@ -1,0 +1,492 @@
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue https://xiaoshuai.blog.csdn.net/
+INFO main us.codecraft.webmagic.Spider - Spider xiaoshuai.blog.csdn.net started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://xiaoshuai.blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 1]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://xiaoshuai.blog.csdn.net:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 1]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://xiaoshuai.blog.csdn.net:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to xiaoshuai.blog.csdn.net/112.47.51.208:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to xiaoshuai.blog.csdn.net/112.47.51.208:443 with timeout 1000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://xiaoshuai.blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 1]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page https://xiaoshuai.blog.csdn.net/ error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider xiaoshuai.blog.csdn.net closed! 1 pages downloaded.
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue https://www.bilibili.com
+INFO main us.codecraft.webmagic.Spider - Spider www.bilibili.com started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://www.bilibili.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 1]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://www.bilibili.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 1]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://www.bilibili.com:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to www.bilibili.com/112.13.92.202:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to www.bilibili.com/112.13.92.202:443 with timeout 1000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://www.bilibili.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 1]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page https://www.bilibili.com error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider www.bilibili.com closed! 1 pages downloaded.
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue http://blog.csdn.net/yerenyuan_pku
+INFO main us.codecraft.webmagic.Spider - Spider blog.csdn.net started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://blog.csdn.net:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to blog.csdn.net/112.47.51.208:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 10.201.93.243:54128<->112.47.51.208:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 10000
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Executing request GET /yerenyuan_pku HTTP/1.1
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> GET /yerenyuan_pku HTTP/1.1
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Host: blog.csdn.net
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> User-Agent: 
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "GET /yerenyuan_pku HTTP/1.1[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Host: blog.csdn.net[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "User-Agent: [\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 301 Moved Permanently[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Date: Tue, 02 Jul 2024 10:46:28 GMT[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Content-Length: 160[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Connection: close[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Location: https://blog.csdn.net/yerenyuan_pku[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "X-Request-Id: 0add5aa30e44ec159146c8e605a582f2[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Server: WAF[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<html>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<head><title>301 Moved Permanently</title></head>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<body>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<center><h1>301 Moved Permanently</h1></center>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<hr><center>WAF</center>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "</body>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "</html>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << HTTP/1.1 301 Moved Permanently
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Date: Tue, 02 Jul 2024 10:46:28 GMT
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Content-Type: text/html
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Content-Length: 160
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Connection: close
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Location: https://blog.csdn.net/yerenyuan_pku
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << X-Request-Id: 0add5aa30e44ec159146c8e605a582f2
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Server: WAF
+DEBUG pool-1-thread-1 us.codecraft.webmagic.downloader.CustomRedirectStrategy - Redirect requested to location 'https://blog.csdn.net/yerenyuan_pku'
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.RedirectExec - Resetting target auth state
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.RedirectExec - Redirecting to 'https://blog.csdn.net/yerenyuan_pku' via {s}->https://blog.csdn.net:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://blog.csdn.net:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to blog.csdn.net/112.47.51.208:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to blog.csdn.net/112.47.51.208:443 with timeout 10000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page http://blog.csdn.net/yerenyuan_pku error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider blog.csdn.net closed! 1 pages downloaded.
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue http://blog.csdn.net/yerenyuan_pku
+INFO main us.codecraft.webmagic.Spider - Spider blog.csdn.net started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://blog.csdn.net:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to blog.csdn.net/112.47.51.208:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 10.201.93.243:54386<->112.47.51.208:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 10000
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Executing request GET /yerenyuan_pku HTTP/1.1
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> GET /yerenyuan_pku HTTP/1.1
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Host: blog.csdn.net
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> User-Agent: 
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "GET /yerenyuan_pku HTTP/1.1[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Host: blog.csdn.net[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "User-Agent: [\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 301 Moved Permanently[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Date: Tue, 02 Jul 2024 10:53:41 GMT[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Content-Length: 160[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Connection: close[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Location: https://blog.csdn.net/yerenyuan_pku[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "X-Request-Id: 3bf564b54ad58207816849baa1e8e04d[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Server: WAF[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<html>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<head><title>301 Moved Permanently</title></head>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<body>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<center><h1>301 Moved Permanently</h1></center>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<hr><center>WAF</center>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "</body>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "</html>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << HTTP/1.1 301 Moved Permanently
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Date: Tue, 02 Jul 2024 10:53:41 GMT
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Content-Type: text/html
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Content-Length: 160
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Connection: close
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Location: https://blog.csdn.net/yerenyuan_pku
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << X-Request-Id: 3bf564b54ad58207816849baa1e8e04d
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Server: WAF
+DEBUG pool-1-thread-1 us.codecraft.webmagic.downloader.CustomRedirectStrategy - Redirect requested to location 'https://blog.csdn.net/yerenyuan_pku'
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.RedirectExec - Resetting target auth state
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.RedirectExec - Redirecting to 'https://blog.csdn.net/yerenyuan_pku' via {s}->https://blog.csdn.net:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://blog.csdn.net:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to blog.csdn.net/112.47.51.208:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to blog.csdn.net/112.47.51.208:443 with timeout 10000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page http://blog.csdn.net/yerenyuan_pku error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider blog.csdn.net closed! 1 pages downloaded.
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue http://blog.csdn.net/yerenyuan_pku
+INFO main us.codecraft.webmagic.Spider - Spider blog.csdn.net started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {}->http://blog.csdn.net:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to blog.csdn.net/112.47.51.208:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connection established 10.201.93.243:54984<->112.47.51.208:80
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: set socket timeout to 10000
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Executing request GET /yerenyuan_pku HTTP/1.1
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Target auth state: UNCHALLENGED
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Proxy auth state: UNCHALLENGED
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> GET /yerenyuan_pku HTTP/1.1
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Accept-Encoding: gzip
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Host: blog.csdn.net
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> Connection: Keep-Alive
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 >> User-Agent: 
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "GET /yerenyuan_pku HTTP/1.1[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Accept-Encoding: gzip[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Host: blog.csdn.net[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "User-Agent: [\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 >> "[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "HTTP/1.1 301 Moved Permanently[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Date: Tue, 02 Jul 2024 11:17:46 GMT[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Content-Type: text/html[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Content-Length: 160[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Connection: close[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Location: https://blog.csdn.net/yerenyuan_pku[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "X-Request-Id: 199c8afc4e1d60ead6984aa53b3e9758[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "Server: WAF[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<html>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<head><title>301 Moved Permanently</title></head>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<body>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<center><h1>301 Moved Permanently</h1></center>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "<hr><center>WAF</center>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "</body>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.wire - http-outgoing-0 << "</html>[\r][\n]"
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << HTTP/1.1 301 Moved Permanently
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Date: Tue, 02 Jul 2024 11:17:46 GMT
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Content-Type: text/html
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Content-Length: 160
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Connection: close
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Location: https://blog.csdn.net/yerenyuan_pku
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << X-Request-Id: 199c8afc4e1d60ead6984aa53b3e9758
+DEBUG pool-1-thread-1 org.apache.http.headers - http-outgoing-0 << Server: WAF
+DEBUG pool-1-thread-1 us.codecraft.webmagic.downloader.CustomRedirectStrategy - Redirect requested to location 'https://blog.csdn.net/yerenyuan_pku'
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.RedirectExec - Resetting target auth state
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.RedirectExec - Redirecting to 'https://blog.csdn.net/yerenyuan_pku' via {s}->https://blog.csdn.net:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Close connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {}->http://blog.csdn.net:80][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 1][route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://blog.csdn.net:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to blog.csdn.net/112.47.51.208:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to blog.csdn.net/112.47.51.208:443 with timeout 10000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-1: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 1][route: {s}->https://blog.csdn.net:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page http://blog.csdn.net/yerenyuan_pku error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider blog.csdn.net closed! 1 pages downloaded.
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue https://github.com/code4craft
+INFO main us.codecraft.webmagic.Spider - Spider github.com started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://github.com:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to github.com/20.205.243.166:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to github.com/20.205.243.166:443 with timeout 10000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page https://github.com/code4craft error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider github.com closed! 1 pages downloaded.
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue https://github.com/code4craft
+INFO main us.codecraft.webmagic.Spider - Spider github.com started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://github.com:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to github.com/20.205.243.166:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to github.com/20.205.243.166:443 with timeout 10000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://github.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page https://github.com/code4craft error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider github.com closed! 1 pages downloaded.
+DEBUG main us.codecraft.webmagic.scheduler.QueueScheduler - push to queue https://www.bilibili.com
+INFO main us.codecraft.webmagic.Spider - Spider www.bilibili.com started!
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: standard
+DEBUG pool-1-thread-1 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection request: [route: {s}->https://www.bilibili.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection leased: [id: 0][route: {s}->https://www.bilibili.com:443][total kept alive: 0; route allocated: 1 of 100; total allocated: 1 of 5]
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Opening connection {s}->https://www.bilibili.com:443
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultHttpClientConnectionOperator - Connecting to www.bilibili.com/223.111.250.53:443
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Connecting socket to www.bilibili.com/223.111.250.53:443 with timeout 5000
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled protocols: []
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Enabled cipher suites:[]
+DEBUG pool-1-thread-1 org.apache.http.conn.ssl.SSLConnectionSocketFactory - Starting handshake
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.DefaultManagedHttpClientConnection - http-outgoing-0: Shutdown connection
+DEBUG pool-1-thread-1 org.apache.http.impl.execchain.MainClientExec - Connection discarded
+DEBUG pool-1-thread-1 org.apache.http.impl.conn.PoolingHttpClientConnectionManager - Connection released: [id: 0][route: {s}->https://www.bilibili.com:443][total kept alive: 0; route allocated: 0 of 100; total allocated: 0 of 5]
+WARN pool-1-thread-1 us.codecraft.webmagic.downloader.HttpClientDownloader - download page https://www.bilibili.com error
+javax.net.ssl.SSLHandshakeException: No appropriate protocol (protocol is disabled or cipher suites are inappropriate)
+	at java.base/sun.security.ssl.HandshakeContext.<init>(HandshakeContext.java:162)
+	at java.base/sun.security.ssl.ClientHandshakeContext.<init>(ClientHandshakeContext.java:103)
+	at java.base/sun.security.ssl.TransportContext.kickstart(TransportContext.java:247)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:448)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.createLayeredSocket(SSLConnectionSocketFactory.java:394)
+	at org.apache.http.conn.ssl.SSLConnectionSocketFactory.connectSocket(SSLConnectionSocketFactory.java:353)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:141)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:353)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:380)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:184)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:88)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at us.codecraft.webmagic.downloader.HttpClientDownloader.download(HttpClientDownloader.java:85)
+	at us.codecraft.webmagic.Spider.processRequest(Spider.java:404)
+	at us.codecraft.webmagic.Spider.access$000(Spider.java:61)
+	at us.codecraft.webmagic.Spider$1.run(Spider.java:320)
+	at us.codecraft.webmagic.thread.CountableThreadPool$1.run(CountableThreadPool.java:74)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+INFO main us.codecraft.webmagic.Spider - Spider www.bilibili.com closed! 1 pages downloaded.
