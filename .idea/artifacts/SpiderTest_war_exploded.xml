@@ -37,6 +37,9 @@
           <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox-tools:3.0.2" />
           <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox-debugger:3.0.2" />
           <element id="library" level="project" name="Maven: info.picocli:picocli:4.7.5" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/mysql-connector-j-8.4.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/webmagic-core-0.7.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/webmagic-extension-0.7.3.jar" />
         </element>
       </element>
       <element id="javaee-facet-resources" facet="SpiderTest/web/Web2" />
