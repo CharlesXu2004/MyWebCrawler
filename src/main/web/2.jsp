@@ -25,9 +25,16 @@
         <input type="submit"/>
     </fieldset>
 </form>
-<form>
+<form action="CreateWord" method="post">
     <fieldset>
         <legend>使用word保存</legend>
+        字体：
+        <select name="font">
+            <option value="KaiTi.ttf">楷体</option>
+            <option value="SongTi.ttf">宋体</option>
+        </select><br/>
+        字号：<input type="text" name="fontSize"/><br/>
+        <input type="submit"/>
     </fieldset>
 </form>
 </body>
