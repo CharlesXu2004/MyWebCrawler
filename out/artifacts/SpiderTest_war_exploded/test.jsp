@@ -23,8 +23,6 @@
 
         else{
 
-            PrintWriter writer=response.getWriter();
-            writer.write("跳转");
 
             request.setAttribute("url", url);
             request.getRequestDispatcher("Main.jsp").forward(request,response);

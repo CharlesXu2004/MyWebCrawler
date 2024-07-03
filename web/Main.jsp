@@ -13,6 +13,8 @@
 <%@ page import="java.io.File" %>
 <%@ page import="org.apache.pdfbox.pdmodel.PDPageContentStream" %>
 <%@ page import="org.apache.pdfbox.pdmodel.font.PDFont" %>
+<%@ page import="org.example.WriteArrayToWord" %>
+<%@ page import="javax.swing.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -36,9 +38,14 @@
         //for( String item1:item){
             //writer.println(item1);
         //}
+
         for(int k=0;k<item.size();k++){
             writer.println("<a href=\""+ itemlinks.get(k) +"\" target=\"_self\">"+item.get(k)+"</a><br>");
         }
+        //System.out.println(item.size());
+
+        WriteArrayToWord obj=new WriteArrayToWord(item);
+        obj.WriteToWord();
 
 //        PDDocument document=new PDDocument();
 //        PDPage pdfpage=new PDPage();

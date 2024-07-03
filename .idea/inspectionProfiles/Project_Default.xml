@@ -6,15 +6,18 @@
       <option name="ignoredModules">
         <list>
           <option value="SpiderTest" />
+          <option value="SpiderTest" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
           <option value="com.alibaba:fastjson:1.2.28" />
+          <option value="com.jayway.jsonpath:json-path:2.4.0" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="不可利用" />
           <option value="不可利用" />
         </list>
       </option>
