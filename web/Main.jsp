@@ -11,6 +11,8 @@
 <%@ page import="org.apache.pdfbox.pdmodel.PDDocument" %>
 <%@ page import="org.apache.pdfbox.pdmodel.PDPage" %>
 <%@ page import="java.io.File" %>
+<%@ page import="org.apache.pdfbox.pdmodel.PDPageContentStream" %>
+<%@ page import="org.apache.pdfbox.pdmodel.font.PDFont" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -37,14 +39,28 @@
         for(int k=0;k<item.size();k++){
             writer.println("<a href=\""+ itemlinks.get(k) +"\" target=\"_self\">"+item.get(k)+"</a><br>");
         }
-        PDDocument document=new PDDocument();
-        PDPage pdfpage=new PDPage();
-        document.addPage(pdfpage);
-        document.save("D:\\idea\\projects\\SpiderTest\\data\\pdeftest.pdf");
-        document.close();
 
-        File file=new File("D:\\idea\\projects\\SpiderTest\\data\\pdeftest.pdf");
-
+//        PDDocument document=new PDDocument();
+//        PDPage pdfpage=new PDPage();
+//        document.addPage(pdfpage);
+//        document.save("D:\\idea\\projects\\SpiderTest\\data\\pdftest.pdf");
+//
+//
+//        File file=new File("D:\\idea\\projects\\SpiderTest\\data\\pdftest.pdf");
+//
+//        PDPageContentStream contentStream=new PDPageContentStream(document,p1);
+//
+//        contentStream.beginText();
+//        contentStream.newLineAtOffset(0,0);
+//        String pdftext=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").toString();
+//        //contentStream.setFont("SimSun",30);
+//        contentStream.showText(pdftext);
+//        contentStream.endText();
+//
+//        contentStream.close();
+//
+//        document.close();
+//        document.save("D:\\idea\\projects\\SpiderTest\\data\\pdftest.pdf");
 
     %>
 </body>
