@@ -44,20 +44,20 @@ public class CreatePdfServlet extends HttpServlet {
         contentStream.beginText();
         contentStream.newLineAtOffset(80,750);
 
-        List<String> pdftext=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();
+        List<String> pdfText=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();
 
-        for(String text:pdftext){
+        for(String text:pdfText){
             contentStream.showText(text);
             contentStream.newLineAtOffset(0,-20);
         }
 
         contentStream.endText();
         contentStream.close();
-        document.save(path+"data/res.pdf"); //保存
+        document.save(path+"data/Result.pdf"); //保存
         document.close();
         response.setContentType("application/x-download");
-        response.addHeader("Content-Disposition","attachment;filename=res.pdf");
-        IOUtils.copy(new FileInputStream(path+"data/res.pdf"),response.getOutputStream());
+        response.addHeader("Content-Disposition","attachment;filename=Result.pdf");
+        IOUtils.copy(new FileInputStream(path+"data/Result.pdf"),response.getOutputStream());
     }
 
     @Override

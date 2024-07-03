@@ -20,4 +20,13 @@
         <servlet-name>CreatePdfServlet</servlet-name>
         <url-pattern>/CreatePdf</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateWordServlet</servlet-name>
+        <servlet-class>org.example.CreateWordServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateWordServlet</servlet-name>
+        <url-pattern>/CreateWord</url-pattern>
+    </servlet-mapping>
 </web-app>
