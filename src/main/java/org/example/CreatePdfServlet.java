@@ -12,8 +12,10 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.jsoup.Jsoup;
 import us.codecraft.webmagic.selector.Html;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -44,10 +46,15 @@ public class CreatePdfServlet extends HttpServlet {
         contentStream.beginText();
         contentStream.newLineAtOffset(80,750);
 
-        List<String> pdfText=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();
+        List<String> pdfText=html.xpath("//div[@class='wp_articlecontent']").all();
+
+
 
         for(String text:pdfText){
-            contentStream.showText(text);
+            StringBuilder builder=new StringBuilder(text);
+            String textOnly = Jsoup.parse(builder.toString()).text();
+            //text = text.replaceAll("<[^>]`>", "");
+            contentStream.showText(textOnly);
             contentStream.newLineAtOffset(0,-20);
         }
 
