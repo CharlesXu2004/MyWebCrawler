@@ -1,4 +1,3 @@
-<%@ page import="java.io.PrintWriter" %>
 <%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -9,6 +8,7 @@
     <title>urlInputPage</title>
     <link rel="stylesheet" type="text/css" href="urlInputPageCSS.css">
 </head>
+<jsp:useBean id="URLs" class="org.example.UrlBean" scope="session"/>
     <body>
     <main>
         <script>
@@ -25,7 +25,7 @@
             <br>
         </div>
         <div class="subcontainer">
-            <form action="Crawler" method="post">
+            <form action="UrlCrawl" method="post">
                 <input class="box" type="text" name="url"><br>
                 <br>
                 <br>
@@ -98,6 +98,5 @@
             }
         });
     </script>
-
     </body>
 </html>
