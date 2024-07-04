@@ -38,7 +38,7 @@ public class CrawlerServlet extends HttpServlet {
 
         String url=request.getParameter("url");
         if(url==null||"".equals(url)){
-            request.getRequestDispatcher("test.jsp").forward(request,response);
+            request.getRequestDispatcher("index.jsp").forward(request,response);
         }
         else{
             PrintWriter out=response.getWriter();
@@ -51,7 +51,7 @@ public class CrawlerServlet extends HttpServlet {
             Datas.html=html;
 
 
-            List<String> item=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();
+            List<String> item=html.xpath("//div[@class='wp_articlecontent']").all();
             List<String> itemlinks=html.xpath("//li[@class='menu-item i2']/ul/li").links().all();
 
             CrawlerBean bean=new CrawlerBean();
@@ -65,7 +65,7 @@ public class CrawlerServlet extends HttpServlet {
             //for( String item1:item){
             //writer.println(item1);
             //}
-            request.getRequestDispatcher("2.jsp").forward(request,response);
+            request.getRequestDispatcher("Main.jsp").forward(request,response);
 
         }
     }
