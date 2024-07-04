@@ -37,7 +37,8 @@ public class CreateWordServlet extends HttpServlet {
         List<String> wordText=html.xpath("//div[@class='wp_articlecontent']").all();
         XWPFDocument document = new XWPFDocument();
         for (String text:wordText) {
-            text=text.replace("</p>","\n");
+
+            text=text.replace("</p>","<--------praline-------->");
 
             StringBuilder builder=new StringBuilder(text);
             String textOnly = Jsoup.parse(builder.toString()).text();
