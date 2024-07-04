@@ -1,26 +1,21 @@
 package org.example;
 
+import jakarta.servlet.annotation.WebServlet;
 import org.apache.pdfbox.io.IOUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
-import org.apache.pdfbox.pdmodel.font.PDType1CFont;
-import org.example.Datas;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.jsoup.Jsoup;
-import us.codecraft.webmagic.selector.Html;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
 
+@WebServlet("/CreatePdfServlet")
 public class CreatePdfServlet extends HttpServlet {
     @Override
     public void init()throws ServletException{
@@ -32,36 +27,17 @@ public class CreatePdfServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        String path=Datas.PATH;
-        Html html=Datas.html;
-        PDDocument document = new PDDocument();
+        String path= Path.PATH;
+        PDDocument document=new PDDocument();
         PDFont font= PDType0Font.load(document, new File(path+"Fonts/"+request.getParameter("font")));
-        int fontSize=Integer.parseInt(request.getParameter("fontSize"));
-
-        document.addPage(new PDPage());
-        PDPage pdfPage = document.getPage(0);                      //下标从0开始
-        PDPageContentStream contentStream=new PDPageContentStream(document,pdfPage);
-
-        contentStream.setFont(font,fontSize);
-        contentStream.beginText();
-        contentStream.newLineAtOffset(80,750);
-
-        List<String> pdfText=html.xpath("//div[@class='wp_articlecontent']").all();
-
-
-
-        for(String text:pdfText){
-            StringBuilder builder=new StringBuilder(text);
-            String textOnly = Jsoup.parse(builder.toString()).text();
-            //text = text.replaceAll("<[^>]`>", "");
-            contentStream.showText(textOnly);
-            contentStream.newLineAtOffset(0,-20);
+        float fontSize=Integer.parseInt(request.getParameter("fontSize"));
+        PassageCrawlBean Bean=(PassageCrawlBean) request.getSession().getAttribute("Passage");
+        try {
+            GeneratePdf.create(document,font,fontSize,Bean.getText(),Bean.getTitle());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
 
-        contentStream.endText();
-        contentStream.close();
-        document.save(path+"data/Result.pdf"); //保存
-        document.close();
         response.setContentType("application/x-download");
         response.addHeader("Content-Disposition","attachment;filename=Result.pdf");
         IOUtils.copy(new FileInputStream(path+"data/Result.pdf"),response.getOutputStream());

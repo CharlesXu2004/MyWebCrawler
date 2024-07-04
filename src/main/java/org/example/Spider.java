@@ -3,15 +3,9 @@ package org.example;
 
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
-import us.codecraft.webmagic.Spider;
-import us.codecraft.webmagic.pipeline.ConsolePipeline;
 import us.codecraft.webmagic.processor.PageProcessor;
-import us.codecraft.webmagic.selector.Html;
-import us.codecraft.webmagic.pipeline.JsonFilePipeline;
-import javax.swing.text.html.HTML;
-import java.util.List;
 
-public class TestHHU implements PageProcessor {
+public class Spider implements PageProcessor {
     private Site site = Site.me().setRetryTimes(1).setSleepTime(100);
     private Page page;
     public Page getPage() {
@@ -27,5 +21,4 @@ public class TestHHU implements PageProcessor {
         return site;
     }
 }
-
 

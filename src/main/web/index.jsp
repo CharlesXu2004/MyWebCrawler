@@ -9,8 +9,7 @@
     <title>urlInputPage</title>
     <link rel="stylesheet" type="text/css" href="urlInputPageCSS.css">
 </head>
-<jsp:useBean id="result" class="org.example.CrawlerBean" scope="session"/>
-<jsp:useBean id="resultString" class="org.example.TextStringBean" scope="session"/>
+<jsp:useBean id="URLs" class="org.example.UrlBean" scope="session"/>
     <body>
     <main>
         <script>
@@ -27,7 +26,7 @@
             <br>
         </div>
         <div class="subcontainer">
-            <form action="Crawler" method="post">
+            <form action="UrlCrawl" method="post">
                 <input class="box" type="text" name="url"><br>
                 <br>
                 <br>

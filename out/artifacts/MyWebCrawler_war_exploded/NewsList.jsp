@@ -1,30 +1,33 @@
 <%@ page import="java.io.PrintWriter" %>
-<%@ page import="java.lang.reflect.Array" %>
-<%@ page import="java.util.ArrayList" %>
-<%@ page import="org.example.CrawlerBean" %>
 <%@ page import="java.util.List" %>
-<jsp:useBean id="result" class="org.example.CrawlerBean" scope="session"/>
-<%          PrintWriter writer=response.getWriter();
+<jsp:useBean id="URLs" class="org.example.UrlBean" scope="session"/>
+<%
+    PrintWriter writer=response.getWriter();
 
-            writer.println("<html>");
-            writer.println("<head>");
-            writer.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"NewsListCSS.css\">");
-            writer.println("<title>NewsList</title>");
-            writer.println("</head><body>");
-            writer.println("<jsp:useBean id=\"resultString\" class=\"org.example.TextStringBean\" scope=\"session\"/>");
-            writer.println("<main>");
+    writer.println("<html>");
+    writer.println("<head>");
+    writer.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"NewsListCSS.css\">");
+    writer.println("<title>NewsList</title>");
+    writer.println("</head><body>");
+
+    writer.println("<main>");
 
     writer.print("<div  class=\"ButtonBox\" id=\"ButtonBox\">");
-            List<String> t1=result.getText();
-            for(int i=0;i<t1.size();i++){
-                String t=t1.get(i);
-                writer.println("<button class=\"button\" onclick=\"window.location.href='Main.jsp'\">"+i+"</button>");
-            }
-            writer.println(" </div>");
-            writer.println("</div> </div><div style=\"display: flex\" class>");
 
-            writer.println("<div style=\"width:200px\"></div></div> </main> </body> </html>");
-            %>
+    List<String> t1=URLs.getText();
+    List<String> t2=URLs.getHyberlink();
+    for(int i=0;i<t1.size();i++){
+        String t=t1.get(i);
+        writer.println("<form  action=\"buttonEvent\" method=\"post\">");
+        writer.println("<input type=\"submit\" class=\"button\" name=\"button"+i+"\" value=\""+t+"\"  >");
+        writer.println("</input>");
+        writer.println("</form>");
+        //onclick=\"window.location.href='Main.jsp'\">"
+    }
+    writer.println(" </div>");
+
+    writer.println("</main> </body> </html>");
+%>
 <script>
 
 </script>
