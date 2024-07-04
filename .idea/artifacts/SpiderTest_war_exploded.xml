@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="SpiderTest:war exploded">
+  <artifact type="exploded-war" build-on-make="true" name="SpiderTest:war exploded">
     <output-path>$PROJECT_DIR$/out/artifacts/SpiderTest_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
@@ -37,9 +37,24 @@
           <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox-tools:3.0.2" />
           <element id="library" level="project" name="Maven: org.apache.pdfbox:pdfbox-debugger:3.0.2" />
           <element id="library" level="project" name="Maven: info.picocli:picocli:4.7.5" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml:4.1.2" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi:4.1.2" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-collections4:4.4" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-math3:3.6.1" />
+          <element id="library" level="project" name="Maven: com.zaxxer:SparseBitSet:1.2" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-compress:1.19" />
+          <element id="library" level="project" name="Maven: com.github.virtuald:curvesapi:1.06" />
+          <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:4.1.2" />
+          <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:3.1.0" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/mysql-connector-j-8.4.0.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/poi-ooxml-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/poi-ooxml-schemas-4.1.2.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/webmagic-core-0.7.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/webmagic-extension-0.7.3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/xmlbeans-3.1.0.jar" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="SpiderTest/web/Web2" />
+      <element id="javaee-facet-resources" facet="SpiderTest/web/Web" />
     </root>
   </artifact>
 </component>
