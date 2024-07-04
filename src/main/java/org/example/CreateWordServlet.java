@@ -9,6 +9,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.jsoup.Jsoup;
 import us.codecraft.webmagic.selector.Html;
 
 import java.io.File;
@@ -33,12 +34,17 @@ public class CreateWordServlet extends HttpServlet {
         String font= path+"Fonts/"+request.getParameter("font");
         int fontSize=Integer.parseInt(request.getParameter("fontSize"));
 
-        List<String> wordText=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();
+        List<String> wordText=html.xpath("//div[@class='wp_articlecontent']").all();
         XWPFDocument document = new XWPFDocument();
         for (String text:wordText) {
+            text=text.replace("</p>","\n");
+
+            StringBuilder builder=new StringBuilder(text);
+            String textOnly = Jsoup.parse(builder.toString()).text();
+
             XWPFParagraph paragraph = document.createParagraph();
             XWPFRun run = paragraph.createRun();
-            run.setText(text);
+            run.setText(textOnly);
         }
         FileOutputStream out=new FileOutputStream(path+"data/Result.docx");
         document.write(out);

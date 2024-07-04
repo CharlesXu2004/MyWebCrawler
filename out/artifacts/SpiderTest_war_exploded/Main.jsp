@@ -18,53 +18,103 @@
 <html>
 <head>
     <title>Main</title>
+    <link rel="stylesheet" type="text/css" href="PDF_WORDCSS.css">
 </head>
 <body>
+<jsp:useBean id="result" class="org.example.CrawlerBean" scope="session"/>
 <%
-    PrintWriter writer=response.getWriter();
-    String url=request.getParameter("url");
-    TestHHU testHHU=new TestHHU();
-    Spider.create(testHHU).addUrl(url).addPipeline(new JsonFilePipeline("D:\\idea\\projects\\SpiderTest\\data"))
-            .addPipeline(new ConsolePipeline())
-            .run();
-    Page p=testHHU.getPage();
-    Html html=p.getHtml();
-
-    List<String> item=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();
-    List<String> itemlinks=html.xpath("//li[@class='menu-item i2']/ul/li").links().all();
-    //.css("ul.sub-menu  li").css("li").
-    //String item=html.xpath("//li[@class='sub-item i2-"+i+"']").toString();
-    //for( String item1:item){
-    //writer.println(item1);
-    //}
-    for(int k=0;k<item.size();k++){
-        writer.println("<a href=\""+ itemlinks.get(k) +"\" target=\"_self\">"+item.get(k)+"</a><br>");
-    }
-
-    String ProjectPath="D:/0_Programming/__LANGUAGE__JSP/MyWebCrawler";                  //项目根节点
-    //writer.println(ProjectPath);
-    //writer.println("111");
-    PDDocument document = new PDDocument();                             //创建一个空文档
-    document.addPage(new PDPage());
-    PDPage pdfpage = document.getPage(0);                      //下标从0开始
-    PDPageContentStream contentStream=new PDPageContentStream(document,pdfpage);
-
-    PDFont font= PDType0Font.load(document, new File(ProjectPath+"/Fonts/HarmonyOS_Sans_SC_Bold.ttf"));
-    contentStream.setFont(font,12);
-    contentStream.beginText();
-    contentStream.newLineAtOffset(80,750);
-
-    List<String>pdftext=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();
-
-    for(String text:pdftext){
-        contentStream.showText(text);
-        contentStream.newLineAtOffset(0,-20);
-    }
-
-    contentStream.endText();
-    contentStream.close();
-    document.save(ProjectPath+"/data/pdf.pdf"); //保存
-    document.close();
+    List<String>item=result.getText(),
+            itemlinks=result.getHyberlink();
+    String item1=item.get(0);
 %>
+<jsp:getProperty name="result" property="text"/>
+<main>
+    <div  class="textbox01" id="textbox01">
+        <div class="text01" id="text01">
+            weigenggai
+        </div>
+    </div>
+    <input id="button" type="button" onclick="function replace() {
+      
+    }">
+    <form action="CreatePdf" method="post">
+        <fieldset>
+            <legend>使用pdf保存</legend>
+            字体：
+            <select name="font">
+                <option value="KaiTi.ttf">楷体</option>
+                <option value="SongTi.ttf">宋体</option>
+            </select><br/>
+            字号：<input type="text" name="fontSize"/><br/>
+            <input type="submit"/>
+        </fieldset>
+    </form>
+
+    <form action="CreateWord" method="post">
+        <fieldset>
+            <legend>使用word保存</legend>
+            字体：
+            <select name="font">
+                <option value="KaiTi.ttf">楷体</option>
+                <option value="SongTi.ttf">宋体</option>
+            </select><br/>
+            字号：<input type="text" name="fontSize"/><br/>
+            <input type="submit"/>
+        </fieldset>
+    </form>
+    <script>
+        var t1=document.getElementsByClassName("text01");
+        t1.innerText=<%=item1%>;
+        alert(t1.innerText);
+    </script>
+</main>
+
+
+<%--<%--%>
+<%--    PrintWriter writer=response.getWriter();--%>
+<%--    String url=request.getParameter("url");--%>
+<%--    TestHHU testHHU=new TestHHU();--%>
+<%--    Spider.create(testHHU).addUrl(url).addPipeline(new JsonFilePipeline("D:\\idea\\projects\\SpiderTest\\data"))--%>
+<%--            .addPipeline(new ConsolePipeline())--%>
+<%--            .run();--%>
+<%--    Page p=testHHU.getPage();--%>
+<%--    Html html=p.getHtml();--%>
+
+<%--    List<String> item=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();--%>
+<%--    List<String> itemlinks=html.xpath("//li[@class='menu-item i2']/ul/li").links().all();--%>
+<%--    //.css("ul.sub-menu  li").css("li").--%>
+<%--    //String item=html.xpath("//li[@class='sub-item i2-"+i+"']").toString();--%>
+<%--    //for( String item1:item){--%>
+<%--    //writer.println(item1);--%>
+<%--    //}--%>
+<%--    for(int k=0;k<item.size();k++){--%>
+<%--        writer.println("<a href=\""+ itemlinks.get(k) +"\" target=\"_self\">"+item.get(k)+"</a><br>");--%>
+<%--    }--%>
+
+<%--    String ProjectPath="D:/0_Programming/__LANGUAGE__JSP/MyWebCrawler";                  //项目根节点--%>
+<%--    //writer.println(ProjectPath);--%>
+<%--    //writer.println("111");--%>
+<%--    PDDocument document = new PDDocument();                             //创建一个空文档--%>
+<%--    document.addPage(new PDPage());--%>
+<%--    PDPage pdfpage = document.getPage(0);                      //下标从0开始--%>
+<%--    PDPageContentStream contentStream=new PDPageContentStream(document,pdfpage);--%>
+
+<%--    PDFont font= PDType0Font.load(document, new File(ProjectPath+"/Fonts/HarmonyOS_Sans_SC_Bold.ttf"));--%>
+<%--    contentStream.setFont(font,12);--%>
+<%--    contentStream.beginText();--%>
+<%--    contentStream.newLineAtOffset(80,750);--%>
+
+<%--    List<String>pdftext=html.xpath("//li[@class='menu-item i2']/ul/li").regex("(?<=<a.*>).*(?=</a>)").all();--%>
+
+<%--    for(String text:pdftext){--%>
+<%--        contentStream.showText(text);--%>
+<%--        contentStream.newLineAtOffset(0,-20);--%>
+<%--    }--%>
+
+<%--    contentStream.endText();--%>
+<%--    contentStream.close();--%>
+<%--    document.save(ProjectPath+"/data/pdf.pdf"); //保存--%>
+<%--    document.close();--%>
+<%--%>--%>
 </body>
 </html>
