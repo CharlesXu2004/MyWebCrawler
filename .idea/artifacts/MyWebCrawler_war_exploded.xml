@@ -1,10 +1,10 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="SpiderTest:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/SpiderTest_war_exploded</output-path>
+  <artifact type="exploded-war" name="MyWebCrawler:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/MyWebCrawler_war_exploded</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="SpiderTest" />
+          <element id="module-output" name="MyWebCrawler" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: us.codecraft:webmagic-core:0.7.3" />
@@ -46,15 +46,9 @@
           <element id="library" level="project" name="Maven: com.github.virtuald:curvesapi:1.06" />
           <element id="library" level="project" name="Maven: org.apache.poi:poi-ooxml-schemas:4.1.2" />
           <element id="library" level="project" name="Maven: org.apache.xmlbeans:xmlbeans:3.1.0" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/mysql-connector-j-8.4.0.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/poi-ooxml-4.1.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/poi-ooxml-schemas-4.1.2.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/webmagic-core-0.7.3.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/webmagic-extension-0.7.3.jar" />
-          <element id="file-copy" path="$PROJECT_DIR$/src/main/web/WEB-INF/lib/xmlbeans-3.1.0.jar" />
         </element>
       </element>
-      <element id="javaee-facet-resources" facet="SpiderTest/web/Web2" />
+      <element id="javaee-facet-resources" facet="MyWebCrawler/web/Web" />
     </root>
   </artifact>
 </component>

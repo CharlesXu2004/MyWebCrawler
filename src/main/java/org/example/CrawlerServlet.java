@@ -12,6 +12,7 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.jsoup.Jsoup;
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.pipeline.ConsolePipeline;
@@ -21,6 +22,7 @@ import us.codecraft.webmagic.selector.Html;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CrawlerServlet extends HttpServlet {
@@ -51,21 +53,39 @@ public class CrawlerServlet extends HttpServlet {
             Datas.html=html;
 
 
-            List<String> item=html.xpath("//div[@class='wp_articlecontent']").all();
-            List<String> itemlinks=html.xpath("//li[@class='menu-item i2']/ul/li").links().all();
+            //List<String> item=html.xpath("//div[@class='wp_articlecontent']").all();
+            List<String> itemlinks=html.xpath("//span[@class='news_title']").all();
+            List<String> linktexts=html.xpath("//span[@class='news_title']").links().all();
 
-            CrawlerBean bean=new CrawlerBean();
-            bean.setHyberlink(itemlinks);
-            bean.setText(item);
+
+            //String itemlinksString=html.xpath("//span[@class='news_title']").links().toString();
+            for(String linktext:linktexts){
+                Jsoup.parse(linktext).text();
+            }
+
+            CrawlerBean crawlerBean=new CrawlerBean();
+            crawlerBean.setText(linktexts);
+            crawlerBean.setHyberlink(itemlinks);
+
             HttpSession session=request.getSession();
-            session.setAttribute("result",bean);
+            session.setAttribute("result",crawlerBean);
+
+            String itemString=html.xpath("//div[@class='wp_articlecontent']").toString();
+            String titleString=html.xpath("//title").regex("(?<=<title.*>).*(?=</title>)").toString();
+
+            TextStringBean beanString=new TextStringBean();
+            beanString.setTitle(titleString);
+            beanString.setText(itemString);
+
+            session.setAttribute("resultString",beanString);
+
 
             //.css("ul.sub-menu  li").css("li").
             //String item=html.xpath("//li[@class='sub-item i2-"+i+"']").toString();
             //for( String item1:item){
             //writer.println(item1);
             //}
-            request.getRequestDispatcher("Main.jsp").forward(request,response);
+            request.getRequestDispatcher("NewsList.jsp").forward(request,response);
 
         }
     }

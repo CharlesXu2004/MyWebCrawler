@@ -6,15 +6,21 @@
       <option name="ignoredModules">
         <list>
           <option value="SpiderTest" />
+          <option value="MyWebCrawler" />
+          <option value="MyWebCrawler" />
         </list>
       </option>
       <option name="ignoredPackages">
         <list>
           <option value="com.alibaba:fastjson:1.2.28" />
+          <option value="org.glassfish.web:jstl-impl:1.2" />
+          <option value="taglibs:standard:1.1.2" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="不可利用" />
+          <option value="不可利用" />
           <option value="不可利用" />
         </list>
       </option>

@@ -6,18 +6,18 @@ public class CrawlerBean {
     private List<String> hyberlink,text;
 
     public List<String> getHyberlink() {
-        return hyberlink;
+        return this.hyberlink;
     }
 
     public void setHyberlink(List<String> list){
-        hyberlink=list;
+        this.hyberlink=list;
     }
 
     public List<String> getText() {
-        return text;
+        return this.text;
     }
 
     public void setText(List<String> list){
-        text=list;
+        this.text=list;
     }
 }

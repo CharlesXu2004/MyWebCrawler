@@ -9,6 +9,8 @@
     <title>urlInputPage</title>
     <link rel="stylesheet" type="text/css" href="urlInputPageCSS.css">
 </head>
+<jsp:useBean id="result" class="org.example.CrawlerBean" scope="session"/>
+<jsp:useBean id="resultString" class="org.example.TextStringBean" scope="session"/>
     <body>
     <main>
         <script>

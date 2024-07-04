@@ -22,51 +22,46 @@
 </head>
 <body>
 <jsp:useBean id="result" class="org.example.CrawlerBean" scope="session"/>
-<%
-    List<String>item=result.getText(),
-            itemlinks=result.getHyberlink();
-    String item1=item.get(0);
-%>
-<jsp:getProperty name="result" property="text"/>
+<jsp:useBean id="resultString" class="org.example.TextStringBean" scope="session"/>
+
 <main>
     <div  class="textbox01" id="textbox01">
         <div class="text01" id="text01">
-            weigenggai
+            <p>title--</p>
+            <jsp:getProperty name="resultString" property="title"/>
+            <p>--</p>
+            <jsp:getProperty name="resultString" property="text"/>
         </div>
     </div>
-    <input id="button" type="button" onclick="function replace() {
-      
-    }">
-    <form action="CreatePdf" method="post">
-        <fieldset>
-            <legend>使用pdf保存</legend>
-            字体：
-            <select name="font">
-                <option value="KaiTi.ttf">楷体</option>
-                <option value="SongTi.ttf">宋体</option>
-            </select><br/>
-            字号：<input type="text" name="fontSize"/><br/>
-            <input type="submit"/>
-        </fieldset>
-    </form>
+    <div style="display: flex" class>
+        <form action="CreatePdf" method="post">
+            <fieldset>
+                <legend>使用pdf保存</legend>
+                字体：<select class="selectbox" name="font">
+                    <option value="KaiTi.ttf">楷体</option>
+                    <option value="SongTi.ttf">宋体</option>
+                </select><br/>
+                <br>
+                字号：<input  class="fontsizebox" type="text" name="fontSize"/><br/>
+                <input type="submit"/>
+            </fieldset>
+        </form>
 
-    <form action="CreateWord" method="post">
-        <fieldset>
-            <legend>使用word保存</legend>
-            字体：
-            <select name="font">
-                <option value="KaiTi.ttf">楷体</option>
-                <option value="SongTi.ttf">宋体</option>
-            </select><br/>
-            字号：<input type="text" name="fontSize"/><br/>
-            <input type="submit"/>
-        </fieldset>
-    </form>
-    <script>
-        var t1=document.getElementsByClassName("text01");
-        t1.innerText=<%=item1%>;
-        alert(t1.innerText);
-    </script>
+        <div style="width:200px"></div>
+
+        <form action="CreateWord" method="post">
+            <fieldset>
+                <legend>使用word保存</legend>
+                字体：<select class="selectbox" name="font">
+                    <option value="KaiTi.ttf">楷体</option>
+                    <option value="SongTi.ttf">宋体</option>
+                </select><br/>
+                <br>
+                字号：<input class="fontsizebox" type="text" name="fontSize"/><br/>
+                <input type="submit"/>
+            </fieldset>
+        </form>
+    </div>
 </main>
 
 

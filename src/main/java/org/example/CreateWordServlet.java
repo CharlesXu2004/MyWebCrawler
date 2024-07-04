@@ -35,18 +35,26 @@ public class CreateWordServlet extends HttpServlet {
         int fontSize=Integer.parseInt(request.getParameter("fontSize"));
 
         List<String> wordText=html.xpath("//div[@class='wp_articlecontent']").all();
+        String wordTextString=html.xpath("//div[@class='wp_articlecontent']").toString();
+
+
         XWPFDocument document = new XWPFDocument();
-        for (String text:wordText) {
+        //for (String text:wordText) {
 
-            text=text.replace("</p>","<--------praline-------->");
+            //text=text.replace("</p>","<--------praline-------->");
 
-            StringBuilder builder=new StringBuilder(text);
-            String textOnly = Jsoup.parse(builder.toString()).text();
+            //StringBuilder builder=new StringBuilder(text);
+            //String textOnly = Jsoup.parse(builder.toString()).text();
+            wordTextString=wordTextString.replace("</p>","-");
+
+            String textOnly = Jsoup.parse(wordTextString).text();
 
             XWPFParagraph paragraph = document.createParagraph();
             XWPFRun run = paragraph.createRun();
             run.setText(textOnly);
-        }
+        //}
+
+
         FileOutputStream out=new FileOutputStream(path+"data/Result.docx");
         document.write(out);
         document.close();
