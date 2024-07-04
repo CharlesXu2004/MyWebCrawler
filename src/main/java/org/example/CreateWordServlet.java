@@ -30,7 +30,8 @@ public class CreateWordServlet extends HttpServlet {
 
 
         response.setContentType("application/x-download");
-        response.addHeader("Content-Disposition","attachment;filename=Result.docx");
+        String filename=request.getParameter("filename")+".docx";
+        response.addHeader("Content-Disposition","attachment;filename="+filename);
         IOUtils.copy(new FileInputStream(path+"data/Result.docx"),response.getOutputStream());
     }
 

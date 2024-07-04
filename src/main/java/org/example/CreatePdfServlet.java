@@ -39,7 +39,8 @@ public class CreatePdfServlet extends HttpServlet {
         }
 
         response.setContentType("application/x-download");
-        response.addHeader("Content-Disposition","attachment;filename=Result.pdf");
+        String filename=request.getParameter("filename")+".pdf";
+        response.addHeader("Content-Disposition","attachment;filename="+filename);
         IOUtils.copy(new FileInputStream(path+"data/Result.pdf"),response.getOutputStream());
     }
 

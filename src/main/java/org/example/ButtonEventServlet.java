@@ -29,187 +29,43 @@ public class ButtonEventServlet extends HttpServlet {
 
         UrlBean urlbean = (UrlBean) session.getAttribute("URLs");
         List<String> linklist=urlbean.getHyberlink();
+        List<String> titlelist=urlbean.getText();
 
         System.out.println("进了servlet");
        // String button = request.getParameter(textlist.get(0));
         String url;
-        if(request.getParameter("button0")!=null) {
-            url=linklist.get(0);
+        String title;
+        for(int i=0;i<linklist.size();i++){
 
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
+            String b="button"+i;
+            if(request.getParameter(b)!=null) {
+                url=linklist.get(i);
+                title=titlelist.get(i);
 
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button1")!=null){
+                SqlWork sqlWork= new SqlWork();
+                boolean check=sqlWork.check(title);
 
-            url=linklist.get(1);
+                StartUrl starturl = new StartUrl();
+                Html html = starturl.Start(url);
 
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
+                if(!check) {
+                    //处理并存好文章
+                    PassageCrawl passageCrawl = new PassageCrawl();
+                    passageCrawl.Crawl(html, session);
 
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button2")!=null){
-
-            url=linklist.get(2);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button3")!=null){
-
-            url=linklist.get(3);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button4")!=null){
-            url=linklist.get(4);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button5")!=null){
-
-            url=linklist.get(5);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button6")!=null){
-
-            url=linklist.get(6);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button7")!=null){
-
-            url=linklist.get(7);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button8")!=null){
-
-            url=linklist.get(8);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button9")!=null){
-
-            url=linklist.get(9);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button10")!=null){
-
-            url=linklist.get(10);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button11")!=null){
-
-            url=linklist.get(11);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button12")!=null){
-
-            url=linklist.get(12);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button13")!=null){
-
-            url=linklist.get(13);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
-        }
-        else if(request.getParameter("button14")!=null){
-
-            url=linklist.get(14);
-
-            StartUrl starturl=new StartUrl();
-            Html html=starturl.Start(url);
-            //处理并存好文章
-            PassageCrawl passageCrawl=new PassageCrawl();
-            passageCrawl.Crawl(html,session);
-
-            response.sendRedirect("Main.jsp");
+                    PassageCrawlBean bean=(PassageCrawlBean) session.getAttribute("Passage");
+                    sqlWork.insert(bean.getTitle(),bean.getText());
+                }
+                else {
+                    PassageCrawlBean bean = new PassageCrawlBean();
+                    bean.setTitle(title);
+                    bean.setText(sqlWork.content);
+                    bean.setHtml(html);
+                    session.setAttribute("Passage",bean);
+                }
+                response.sendRedirect("Main.jsp");
+                break;
+            }
         }
 
     }
