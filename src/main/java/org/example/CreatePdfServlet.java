@@ -1,26 +1,22 @@
 package org.example;
 
+import jakarta.servlet.annotation.WebServlet;
 import org.apache.pdfbox.io.IOUtils;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.pdmodel.PDPage;
-import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
-import org.apache.pdfbox.pdmodel.font.PDType1CFont;
-import org.example.Datas;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.jsoup.Jsoup;
-import us.codecraft.webmagic.selector.Html;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
+import java.net.URLEncoder;
 
+@WebServlet("/CreatePdf")
 public class CreatePdfServlet extends HttpServlet {
     @Override
     public void init()throws ServletException{
@@ -32,38 +28,31 @@ public class CreatePdfServlet extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
 
-        String path=Datas.PATH;
-        Html html=Datas.html;
-        PDDocument document = new PDDocument();
+        //获取项目根路径
+        String path=request.getSession().getServletContext().getRealPath("/");
+        path=path.substring(0,path.indexOf("out"));
+
+        //获取session中存储文章相关内容的PassageCrawlBean
+        PassageCrawlBean Bean=(PassageCrawlBean) request.getSession().getAttribute("Passage");
+        PDDocument document=new PDDocument();
+        //获取表单指定字体
         PDFont font= PDType0Font.load(document, new File(path+"Fonts/"+request.getParameter("font")));
-        int fontSize=Integer.parseInt(request.getParameter("fontSize"));
+        //获取表单指定字号
+        float fontSize=Integer.parseInt(request.getParameter("fontSize"));
 
-        document.addPage(new PDPage());
-        PDPage pdfPage = document.getPage(0);                      //下标从0开始
-        PDPageContentStream contentStream=new PDPageContentStream(document,pdfPage);
+        try {//调用java文件实现新建pdf的具体逻辑
+            GeneratePdf.create(font,fontSize,Bean.getHtmlText(),Bean.getTitle(),path);
+        } catch (Exception ignored) {}
 
-        contentStream.setFont(font,fontSize);
-        contentStream.beginText();
-        contentStream.newLineAtOffset(80,750);
-
-        List<String> pdfText=html.xpath("//div[@class='wp_articlecontent']").all();
-
-
-
-        for(String text:pdfText){
-            StringBuilder builder=new StringBuilder(text);
-            String textOnly = Jsoup.parse(builder.toString()).text();
-            //text = text.replaceAll("<[^>]`>", "");
-            contentStream.showText(textOnly);
-            contentStream.newLineAtOffset(0,-20);
-        }
-
-        contentStream.endText();
-        contentStream.close();
-        document.save(path+"data/Result.pdf"); //保存
         document.close();
+
+
+        //文件名为表单指定
+        //UTF-8解码，使得中文文件名下载不会报错
+        String filename = URLEncoder.encode(request.getParameter("filename"),"UTF-8")+".pdf";
+        response.addHeader("Content-Disposition","attachment;filename="+filename);
+        //设置响应内容类型为下载文件
         response.setContentType("application/x-download");
-        response.addHeader("Content-Disposition","attachment;filename=Result.pdf");
         IOUtils.copy(new FileInputStream(path+"data/Result.pdf"),response.getOutputStream());
     }
 

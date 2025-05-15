@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+            135deg,
+            hsl(170deg, 80%, 70%),
+            hsl(190deg, 80%, 70%),
+            hsl(250deg, 80%, 70%),
+            hsl(320deg, 80%, 70%)
+    );
+    background-size: 200% 200%;
+    animation: gradient-move 8s ease alternate infinite;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+.title{
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+    background-color: #05060f0a;
+    font-size: 72px;
+    color: white;
+    border-radius: 80px;
+    padding: 35px;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+}
+.title:hover{
+    animation: titlemove 3s ease alternate 1;
+}
+@keyframes titlemove {
+    0% {
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.subtitle{
+    color: hsl(0deg, 0%, 80%);
+    font-size: 30px;
+    margin-top: 18px;
+}
+
+.button {
+    background: rgba(83, 83, 83, 0.2);
+    width:600px;
+    height:70px;
+    color:white;
+    border-radius: 20px;
+    border-color: transparent;
+    border-bottom: transparent;
+    border-right:transparent ;
+    border-bottom:transparent ;
+    border-left:transparent ;
+    margin:  10px 50px 0;
+    font-weight: bold;
+}
+.button:hover{
+    background: rgba(83, 83, 83, 0.58);
+    transform: scale(1.05);
+    -ms-transform: scale(1.05);
+}
+main {
+    position: relative;
+    display: grid;
+    grid-template-columns: [c1]1fr [c2]1fr;
+    place-items: normal;
+    grid-column: auto;
+    width: 100%;
+    height: 80%;
+}
+.ButtonBox{
+
+    display: grid;
+    grid-area: auto;
+
+    border-radius: 30px;
+    color:hsl(251, 44%, 30%);
+
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+    background-color: #05060f0a;
+    margin: 30px 50px 30px;
+
+    width:700px;
+    height:850px;
+
+    overflow-y:scroll;
+    font-weight: bold;
+}
+
+/*滚动条整体样式*/
+.ButtonBox::-webkit-scrollbar {
+    /*高宽分别对应横竖滚动条的尺寸*/
+    width: 15px;
+    height: 1px;
+}
+
+/*滚动条里面小方块*/
+.ButtonBox::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 5px rgba(131, 130, 130, 0);
+    background: rgba(83, 83, 83, 0);
+}
+
+/*滚动条里面轨道*/
+.ButtonBox::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(255, 255, 255, 0);
+    border-radius: 10px;
+    background: rgba(120, 120, 120, 0);
+}
+
+

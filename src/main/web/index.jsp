@@ -8,25 +8,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>urlInputPage</title>
     <link rel="stylesheet" type="text/css" href="urlInputPageCSS.css">
+    <%--引入样式表--%>
 </head>
+<jsp:useBean id="URLs" class="org.example.UrlBean" scope="session"/>
+<%--应用javabean存url--%>
     <body>
     <main>
-        <script>
-            let height=document.body.offsetHeight/2;
-            let htmlmain=document.getElementsByTagName("main");
-            htmlmain.style.top="200px";
-        </script>
-
+        <%--标题和副标题--%>
         <div class="container">
             <h1 class="title">Welcome</h1>
-            <h2 class="subtitle">输入url以开始爬取</h2>
+            <h2 class="subtitle">输入url以开始爬取<br>请输入以“https://www.hhu.edu.cn/13914/list”为前缀的url</h2>
+            
             <br>
             <br>
             <br>
         </div>
         <div class="subcontainer">
-            <form action="Crawler" method="post">
-                <input class="box" type="text" name="url"><br>
+            <%--url输入框和提交按钮--%>
+            <form action="UrlCrawl" method="post">
+                <input class="box" type="text" name="url" value="https://www.hhu.edu.cn/13914/list.htm"><br>
                 <br>
                 <br>
                 <input class="button" type="submit"  value="submit" >
@@ -34,7 +34,7 @@
         </div>
 
     </main>
-
+    <%--动画脚本--%>
     <script>
         let title = document.querySelector(".title");
         let subTitle = document.querySelector(".subtitle");

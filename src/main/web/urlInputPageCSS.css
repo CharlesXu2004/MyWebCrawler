@@ -74,7 +74,6 @@ h2 {
 }
 
 .button{
-
     align-items: center;
     appearance: none;
     background-color: #05060f0a;
@@ -111,6 +110,8 @@ h2 {
 .button:hover {
     background: #05060f0a;
     color: hsl(0, 0%, 100%);
+    transform: scale(1.05);
+    -ms-transform: scale(1.05);
 }
 
 .subcontainer{
